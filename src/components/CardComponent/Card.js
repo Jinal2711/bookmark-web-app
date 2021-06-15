@@ -1,41 +1,41 @@
-import React, { useState } from 'react';
-import { Box, Flex, Heading, HStack, Spacer, Text } from '@chakra-ui/react';
-import { EditIcon, CopyIcon, DeleteIcon } from '@chakra-ui/icons';
+import React from 'react';
+import { Box, Flex, Spacer, VStack } from '@chakra-ui/react';
+import { AddIcon } from '@chakra-ui/icons';
+import BookMarkLinks from './BookMarkLinks';
+import CardEdit from './CardEdit';
 
-const Card = ({ title, link, icon, ...rest }) => {
-  const [isHover, setIsHover] = useState(false);
+const Card = ({onOpen, color, heading, title, link, icon}) => {
   return (
-    <Box
-      p={5}
-      shadow="sm"
-      {...rest}
-      borderRadius="md"
-      border="1px solid rgb(247 247 247)"
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
-    >
-      <Flex>
-        <Box>
-          <Heading fontSize="20px" fontWeight="500">
-            {title}
-          </Heading>
-          <Box as="a" color="#5096FF" href="#" fontWeight="bold">
-            <HStack>
-              {icon}
-              <Text>{link}</Text>
-            </HStack>
-          </Box>
-        </Box>
-        <Spacer />
-
-        {isHover && (
+    <Box borderRadius="lg" overflow="hidden" mt={4}>
+      <Box bg={color} p={3} color="white">
+        <Flex>
+          <Box fontWeight="600">{heading}</Box>
+          <Spacer />
           <Box>
-            <EditIcon mr="2" cursor="pointer" />
-            <CopyIcon mr="2" cursor="pointer" />
-            <DeleteIcon cursor="pointer" />
+            <AddIcon mr="2" cursor="pointer" onClick={onOpen} />
+            <CardEdit />
           </Box>
-        )}
-      </Flex>
+        </Flex>
+      </Box>
+      <Box p={2}>
+        <VStack align="stretch">
+          <BookMarkLinks
+            title={title}
+            link={link}
+            icon={icon}
+          />
+          <BookMarkLinks
+            title={title}
+            link={link}
+            icon={icon}
+          />
+          <BookMarkLinks
+            title={title}
+            link={link}
+            icon={icon}
+          />
+        </VStack>
+      </Box>
     </Box>
   );
 };

@@ -15,9 +15,9 @@ const CardEdit = () => {
         <DragHandleIcon cursor="pointer" />
       </MenuButton>
       <MenuList>
-        <MenuItem>Edit</MenuItem>
+        <MenuItem color="black">Edit</MenuItem>
         <MenuDivider />
-        <MenuItem>Delete</MenuItem>
+        <MenuItem color="black">Delete</MenuItem>
       </MenuList>
     </Menu>
   );

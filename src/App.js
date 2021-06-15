@@ -1,14 +1,14 @@
 import React from 'react';
-import Cards from './components/CardComponent/Cards';
+import CardList from './components/CardComponent/CardList';
 import Footer from './components/Footer';
-import Header from './components/Header';
+import Header from './components/HeaderComponent/Header';
 
 function App() {
 
   return (
     <div className="App">
       <Header/>
-      <Cards/>
+      <CardList/>
       <Footer/>
     </div>
   );

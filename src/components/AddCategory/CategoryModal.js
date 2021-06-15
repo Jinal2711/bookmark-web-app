@@ -30,6 +30,7 @@ const CategoryModal = ({ isOpen, onClose }) => {
     '#714E4E',
     '#1BC759',
   ];
+ 
   return (
     <Modal
       initialFocusRef={initialRef}
@@ -57,12 +58,12 @@ const CategoryModal = ({ isOpen, onClose }) => {
         <ModalBody pb={6}>
           <FormControl>
             <FormLabel>Name</FormLabel>
-            <Input ref={initialRef} placeholder="First name" />
+            <Input ref={initialRef} placeholder="Name" />
           </FormControl>
           <FormControl mt={4}>
             <FormLabel>Color</FormLabel>
           </FormControl>
-          <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+          <Grid templateColumns={["repeat(2, 1fr)","repeat(3, 1fr)","repeat(4, 1fr)","repeat(5, 1fr)"]} gap={6}>
             {bgColors.map((color, i) => (
               <Circle
                 key={i}

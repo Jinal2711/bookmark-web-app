@@ -23,7 +23,7 @@ const BookMarkModal = ({ isOpen, onClose }) => {
       onClose={onClose}
     >
       <ModalOverlay />
-      <ModalContent  pt={3}>
+      <ModalContent pt={3}>
         <Circle
           size="25px"
           bg="red.500"
